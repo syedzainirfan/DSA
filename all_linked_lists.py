@@ -1,7 +1,4 @@
-# SINGLE LINKED LIST:__________________________________________________________________________
-# _____________________________________________________________________________________________
-
-
+# SINGLE LINKED LIST:
 class linked_list:
     def __init__(self,data):
         self.data=data
@@ -28,13 +25,12 @@ data3.next=data4
 data4.next=data5
 data5.next=data6
 
-# print_list(data1)
+print_list(data1)
 
 
 
 
-# INSERT NEW NODE:______________________________________________________________________
-# ______________________________________________________________________________________
+# INSERT NEW NODE:
 
 class add_node:
     def __init__(self,data):
@@ -74,17 +70,16 @@ data4.next=data5
 data5.next=data6
 
 
-# print("Original list")
-# transverseNode(data1)
-# data7=add_node(100)
-# new_node=insert_node(data1,data7,4)
-# print("inserted list")
-# transverseNode(new_node)
+print("Original list")
+transverseNode(data1)
+data7=add_node(100)
+new_node=insert_node(data1,data7,4)
+print("inserted list")
+transverseNode(new_node)
 
 
 
-# DOUBLY LINKED LIST:________________________________________________________________________
-# ___________________________________________________________________________________________
+# DOUBLY LINKED LIST:
 
 class Node:
     def __init__(self,data):
@@ -110,52 +105,10 @@ head=for_prev(head,3)
 head=for_prev(head,2)
 head=for_prev(head,1)
 head=for_prev(head,0)
-# for_next(head)
+for_next(head)
 
 
-# PRACTICE:_______________________________________________________________________________________
-# ________________________________________________________________________________________________
-
-
-class playlist:
-    def __init__(self,songs):
-        self.songs=songs
-        self.next=None
-        self.prev=None
-
-def current(head):
-    current_song = head
-    last = None
-
-    while current_song:
-        print(current_song.songs, end="<--->")
-        last = current_song        
-        current_song = current_song.next
-
-    current_song = last.prev       
-    
-    while current_song:
-        print(current_song.songs, end="<--->")
-        current_song = current_song.prev
-    print("null")
-def for_prev(head,songs):
-    new_songs=playlist(songs)
-    new_songs.next=head
-    if head:
-        head.prev=new_songs
-    return new_songs
-
-head=None
-head=for_prev(head,f"song #5")
-head=for_prev(head,"song #4")
-head=for_prev(head,f"song #3")
-head=for_prev(head,f"song #2")
-head=for_prev(head,f"song #1")
-head=for_prev(head,f"song #0")
-# current(head)
-
-#CIRCULAR DOUBLY LINKED LIST_______________________________________________________________________
-#__________________________________________________________________________________________________
+#CIRCULAR DOUBLY LINKED LIST
 
 class playlist:
     def __init__(self, songs):
@@ -210,42 +163,3 @@ head = for_prev(head, "song #1")
 head = for_prev(head, "song #0")
 
 current(head)
-
-#PRACTICE:_________________________________________________________________________________________
-#__________________________________________________________________________________________________
-
-class Node:
-    def __init__(self,data):
-        self.data=data
-        self.next=None
-        self.prev=None
-class action:
-    def __init__(self):
-        self.head=None
-    def display(self):
-        currentNode=self.head
-        while currentNode:
-            print(currentNode.data,end="<-->")
-            currentNode=currentNode.next
-        print("Null")
-    def add_action(self,data):
-        new_node=Node(data)
-        new_node.next=self.head
-        if self.head:
-            self.head.prev = new_node
-        self.head=new_node
-    def undo(self):
-        if self.head:
-            print(f"Undo{self.head.data}")
-            self.head=self.head.next
-        else:
-            print("Nothing to Undo")
-# value=action()
-# value.add_action(2)
-# value.add_action(44)
-# value.undo()
-# value.add_action(56)
-# value.add_action(99)
-# value.undo()
-# value.add_action(1)
-# value.display()
