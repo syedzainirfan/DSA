@@ -11,7 +11,3 @@ root.children.extend([manager1, manager2])
 print(root.value)
 print([child.value for child in root.children])
 
-# Binary search
-# maximum of two child nodes
-# Algorithms like traversing, searching, insertion and deletion become easier to understand, to implement, and run faster.
-
